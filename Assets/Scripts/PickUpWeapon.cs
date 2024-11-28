@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PickUpWeapon : MonoBehaviour
 {
-    public Transform weaponHoldPosition;  // Where the weapon will be held
-    public KeyCode pickUpKey = KeyCode.E; // Key to pick up and drop the weapon
+    public Transform weaponHoldPosition;  
+    public KeyCode pickUpKey = KeyCode.E; 
 
-    private GameObject heldWeapon = null; // The currently held weapon
+    private GameObject heldWeapon = null; 
 
     void Update()
     {
-        // Check if the player presses the pick-up/drop key
+        
         if (Input.GetKeyDown(pickUpKey))
         {
             if (heldWeapon == null)

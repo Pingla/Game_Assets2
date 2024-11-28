@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class TriggerAnimation : MonoBehaviour
 {
-    public GameObject door;         // The door object with the animation
-    public string animationName;   // Name of the animation to play
+    public GameObject door;         
+    public string animationName;   
 
     private Animation animationComponent;
 
     void Start()
     {
-        // Get the Animation component from the door
+        
         if (door != null)
         {
             animationComponent = door.GetComponent<Animation>();

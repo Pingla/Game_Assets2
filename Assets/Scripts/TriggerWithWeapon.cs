@@ -5,8 +5,8 @@ using UnityEngine;
 public class TriggerAnimationWithWeapon : MonoBehaviour
 {
     [Header("Animation Settings")]
-    public GameObject targetObject;   // Object with the animation
-    public string animationName;     // Name of the animation to play
+    public GameObject targetObject;   
+    public string animationName;     
 
     private Animation animationComponent;
 

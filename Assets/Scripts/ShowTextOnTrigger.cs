@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class ShowTextOnTrigger : MonoBehaviour
 {
-    public Text uiText;        // Reference to the UI Text element
-    public string message;     // Message to display
-    public float displayTime = 3f; // Time to display the text
+    public Text uiText;        
+    public string message;     
+    public float displayTime = 3f; 
 
-    private bool isShowing = false; // Prevent overlapping triggers
+    private bool isShowing = false; 
 
     private void OnTriggerEnter(Collider other)
     {

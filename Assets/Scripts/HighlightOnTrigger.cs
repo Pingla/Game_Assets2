@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class HighlightOnTrigger : MonoBehaviour
 {
-    public GameObject targetObject;       // The object to highlight
-    public Material highlightMaterial;   // The material to use for highlighting
-    public Material originalMaterial;    // To store the original material
+    public GameObject targetObject;       
+    public Material highlightMaterial;   
+    public Material originalMaterial;    
 
-    private Renderer targetRenderer;     // Renderer of the target object
+    private Renderer targetRenderer;     
 
     void Start()
     {
-        // Get the Renderer component of the target object
+        
         if (targetObject != null)
         {
             targetRenderer = targetObject.GetComponent<Renderer>();
             if (targetRenderer != null)
             {
-                originalMaterial = targetRenderer.material; // Store the original material
+                originalMaterial = targetRenderer.material; 
             }
             else
             {

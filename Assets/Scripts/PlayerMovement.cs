@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float walkSpeed = 5f;          // Normal walking speed
-    public float sprintSpeed = 10f;      // Speed while sprinting
+    public float walkSpeed = 5f;          // Walking speed
+    public float sprintSpeed = 10f;      // Sprint speed
     public float mouseSensitivity = 2f;  // Mouse sensitivity for looking around
-    public float jumpHeight = 2f;        // Height of the jump
+    public float jumpHeight = 2f;        // Jump Height
     public float gravity = -9.81f;       // Strength of gravity
     public Transform cameraTransform;    // Reference to the camera
 
@@ -18,13 +18,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        // Get the CharacterController component
+        
         controller = GetComponent<CharacterController>();
 
         // Lock the cursor
         Cursor.lockState = CursorLockMode.Locked;
 
-        // Automatically find the camera if not assigned
+        
         if (cameraTransform == null)
         {
             cameraTransform = Camera.main.transform;
@@ -33,10 +33,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // Check if the player is grounded
+        
         bool isGrounded = controller.isGrounded;
 
-        // Reset vertical velocity when grounded
+        
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
@@ -49,13 +49,13 @@ public class PlayerMovement : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal"); // Left/Right or A/D
         float moveZ = Input.GetAxis("Vertical");   // Forward/Backward or W/S
 
-        // Calculate movement direction relative to the player
+        
         movement = transform.right * moveX + transform.forward * moveZ;
 
-        // Apply movement
+        
         controller.Move(movement * currentSpeed * Time.deltaTime);
 
-        // Handle jumping
+        
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);

@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class PlayAnimationsOnInteract : MonoBehaviour
 {
-    public GameObject chest;            // The chest object with the "ChestOpen" animation
-    public GameObject key;              // The key object with the "Key Rotation" animation
+    public GameObject chest;            
+    public GameObject key;              
 
-    public string chestAnimationName = "ChestOpen"; // Name of the chest animation
-    public string keyAnimationName = "Key Rotation"; // Name of the key animation
+    public string chestAnimationName = "ChestOpen"; 
+    public string keyAnimationName = "Key Rotation"; 
 
     private Animation chestAnimationComponent;
     private Animation keyAnimationComponent;
 
-    private bool playerInTrigger = false; // Tracks if the player is in the trigger zone
+    private bool playerInTrigger = false; 
 
     void Start()
     {
-        // Get Animation components
+        
         if (chest != null)
         {
             chestAnimationComponent = chest.GetComponent<Animation>();
@@ -47,7 +47,7 @@ public class PlayAnimationsOnInteract : MonoBehaviour
 
     void Update()
     {
-        // Check for interaction if the player is in the trigger zone
+        
         if (playerInTrigger && Input.GetKeyDown(KeyCode.E))
         {
             PlayAnimations();
